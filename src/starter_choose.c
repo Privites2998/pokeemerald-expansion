@@ -110,9 +110,12 @@ static const u8 sStarterLabelCoords[STARTER_MON_COUNT][2] =
     {8, 4},
 };
 
-#define GRASS_STARTER (IS_FRLG ? SPECIES_BULBASAUR  : SPECIES_TREECKO)
-#define FIRE_STARTER  (IS_FRLG ? SPECIES_CHARMANDER : SPECIES_TORCHIC)
-#define WATER_STARTER (IS_FRLG ? SPECIES_SQUIRTLE   : SPECIES_MUDKIP )
+// MVP starter trio: Treecko / Litten / Squirtle (grass/fire/water screen order).
+// Litten requires pokeemerald-expansion (Gen 7+). The FRLG branch is left
+// untouched since we don't build that ROM.
+#define GRASS_STARTER (IS_FRLG ? SPECIES_BULBASAUR  : SPECIES_TREECKO )
+#define FIRE_STARTER  (IS_FRLG ? SPECIES_CHARMANDER : SPECIES_LITTEN  )
+#define WATER_STARTER (IS_FRLG ? SPECIES_SQUIRTLE   : SPECIES_SQUIRTLE)
 
 static const u16 sStarterMon[STARTER_MON_COUNT] =
 {
