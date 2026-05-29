@@ -266,15 +266,25 @@
 #define VAR_ROXANNE_CALL_STEP_COUNTER                    0x40F4
 #define VAR_SCOTT_BF_CALL_STEP_COUNTER                   0x40F5
 #define VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER             0x40F6
-#define VAR_UNUSED_0x40F7                                0x40F7 // Unused Var
-#define VAR_UNUSED_0x40F8                                0x40F8 // Unused Var
-#define VAR_UNUSED_0x40F9                                0x40F9 // Unused Var
-#define VAR_UNUSED_0x40FA                                0x40FA // Unused Var
-#define VAR_UNUSED_0x40FB                                0x40FB // Unused Var
-#define VAR_UNUSED_0x40FC                                0x40FC // Unused Var
-#define VAR_UNUSED_0x40FD                                0x40FD // Unused Var
-#define VAR_UNUSED_0x40FE                                0x40FE // Unused Var
-#define VAR_UNUSED_0x40FF                                0x40FF // Unused Var
+
+// --- Roguelike romhack vars (reserved 0x40F7-0x40FF, end of persistent var space) ---
+// RUN vars: describe the current run. Cleared by Special_RoguelikeReset on death/return-to-hub.
+#define VAR_ROGUELIKE_RUN_STATE                          0x40F7 // 0 = in hub, 1 = run in progress (see ROGUELIKE_RUN_* constants)
+#define VAR_ROGUELIKE_ACT                                0x40F8 // current act, 1-4
+#define VAR_ROGUELIKE_ROOMS_DONE                         0x40F9 // rooms cleared this run
+#define VAR_ROGUELIKE_CURRENT_ROOM                       0x40FA // node id in the room graph
+#define VAR_ROGUELIKE_SEED                               0x40FB // per-run RNG seed, set at run start
+// META vars: persist across runs and saves. NEVER cleared by the run reset.
+#define VAR_ROGUELIKE_META_CURRENCY                      0x40FC // meta-progression currency, spent in the hub
+#define VAR_ROGUELIKE_META_UNLOCKS                       0x40FD // bitfield: unlocked starters / features
+#define VAR_ROGUELIKE_META_RESERVED                      0x40FE // reserved for a 2nd meta-upgrade track
+#define VAR_ROGUELIKE_SCRATCH                            0x40FF // general scratch for roguelike scripts
+
+// Range markers so future code/reset logic can iterate the blocks.
+#define VAR_ROGUELIKE_RUN_START                          VAR_ROGUELIKE_RUN_STATE
+#define VAR_ROGUELIKE_RUN_END                            VAR_ROGUELIKE_SEED
+#define VAR_ROGUELIKE_META_START                         VAR_ROGUELIKE_META_CURRENCY
+#define VAR_ROGUELIKE_META_END                           VAR_ROGUELIKE_META_RESERVED
 
 #define VARS_END                                         0x40FF
 #define VARS_COUNT                                       (VARS_END - VARS_START + 1)

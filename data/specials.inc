@@ -640,3 +640,6 @@ gSpecials::
 	def_special UpdateTrainerCardPhotoIcons
 	def_special StickerManGetBragFlags
 	def_special CheckAddCoins
+
+	@ Roguelike romhack specials
+	def_special RoguelikeReset

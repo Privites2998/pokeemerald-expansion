@@ -51,38 +51,47 @@
 
 #else
 
-#define FLAG_UNUSED_0x020    0x20 // Unused Flag
-#define FLAG_UNUSED_0x021    0x21 // Unused Flag
-#define FLAG_UNUSED_0x022    0x22 // Unused Flag
-#define FLAG_UNUSED_0x023    0x23 // Unused Flag
-#define FLAG_UNUSED_0x024    0x24 // Unused Flag
-#define FLAG_UNUSED_0x025    0x25 // Unused Flag
-#define FLAG_UNUSED_0x026    0x26 // Unused Flag
-#define FLAG_UNUSED_0x027    0x27 // Unused Flag
-#define FLAG_UNUSED_0x028    0x28 // Unused Flag
-#define FLAG_UNUSED_0x029    0x29 // Unused Flag
-#define FLAG_UNUSED_0x02A    0x2A // Unused Flag
-#define FLAG_UNUSED_0x02B    0x2B // Unused Flag
-#define FLAG_UNUSED_0x02C    0x2C // Unused Flag
-#define FLAG_UNUSED_0x02D    0x2D // Unused Flag
-#define FLAG_UNUSED_0x02E    0x2E // Unused Flag
-#define FLAG_UNUSED_0x02F    0x2F // Unused Flag
-#define FLAG_UNUSED_0x030    0x30 // Unused Flag
-#define FLAG_UNUSED_0x031    0x31 // Unused Flag
-#define FLAG_UNUSED_0x032    0x32 // Unused Flag
-#define FLAG_UNUSED_0x033    0x33 // Unused Flag
-#define FLAG_UNUSED_0x034    0x34 // Unused Flag
-#define FLAG_UNUSED_0x035    0x35 // Unused Flag
-#define FLAG_UNUSED_0x036    0x36 // Unused Flag
-#define FLAG_UNUSED_0x037    0x37 // Unused Flag
-#define FLAG_UNUSED_0x038    0x38 // Unused Flag
-#define FLAG_UNUSED_0x039    0x39 // Unused Flag
-#define FLAG_UNUSED_0x03A    0x3A // Unused Flag
-#define FLAG_UNUSED_0x03B    0x3B // Unused Flag
-#define FLAG_UNUSED_0x03C    0x3C // Unused Flag
-#define FLAG_UNUSED_0x03D    0x3D // Unused Flag
-#define FLAG_UNUSED_0x03E    0x3E // Unused Flag
-#define FLAG_UNUSED_0x03F    0x3F // Unused Flag
+// --- Roguelike romhack flags (reserved 0x020-0x03F, persistent flag space) ---
+// RUN flags (0x020-0x02F): describe the current run. Cleared by Special_RoguelikeReset.
+#define FLAG_ROGUELIKE_STARTER_CHOSEN    0x20 // set once a starter is picked this run; gates the starter NPC
+#define FLAG_ROGUELIKE_RUN_ACTIVE        0x21 // set while a run is in progress (mirror of VAR_ROGUELIKE_RUN_STATE for script convenience)
+#define FLAG_ROGUELIKE_RUN_UNUSED_0x022  0x22 // reserved run flag
+#define FLAG_ROGUELIKE_RUN_UNUSED_0x023  0x23 // reserved run flag
+#define FLAG_ROGUELIKE_RUN_UNUSED_0x024  0x24 // reserved run flag
+#define FLAG_ROGUELIKE_RUN_UNUSED_0x025  0x25 // reserved run flag
+#define FLAG_ROGUELIKE_RUN_UNUSED_0x026  0x26 // reserved run flag
+#define FLAG_ROGUELIKE_RUN_UNUSED_0x027  0x27 // reserved run flag
+#define FLAG_ROGUELIKE_RUN_UNUSED_0x028  0x28 // reserved run flag
+#define FLAG_ROGUELIKE_RUN_UNUSED_0x029  0x29 // reserved run flag
+#define FLAG_ROGUELIKE_RUN_UNUSED_0x02A  0x2A // reserved run flag
+#define FLAG_ROGUELIKE_RUN_UNUSED_0x02B  0x2B // reserved run flag
+#define FLAG_ROGUELIKE_RUN_UNUSED_0x02C  0x2C // reserved run flag
+#define FLAG_ROGUELIKE_RUN_UNUSED_0x02D  0x2D // reserved run flag
+#define FLAG_ROGUELIKE_RUN_UNUSED_0x02E  0x2E // reserved run flag
+#define FLAG_ROGUELIKE_RUN_UNUSED_0x02F  0x2F // reserved run flag
+// META flags (0x030-0x03F): persist across runs and saves. NEVER cleared by the run reset.
+#define FLAG_ROGUELIKE_UNLOCKED_STARTER_4  0x30 // 4th starter unlocked by beating the act-1 boss (T69)
+#define FLAG_ROGUELIKE_META_UNUSED_0x031   0x31 // reserved meta flag
+#define FLAG_ROGUELIKE_META_UNUSED_0x032   0x32 // reserved meta flag
+#define FLAG_ROGUELIKE_META_UNUSED_0x033   0x33 // reserved meta flag
+#define FLAG_ROGUELIKE_META_UNUSED_0x034   0x34 // reserved meta flag
+#define FLAG_ROGUELIKE_META_UNUSED_0x035   0x35 // reserved meta flag
+#define FLAG_ROGUELIKE_META_UNUSED_0x036   0x36 // reserved meta flag
+#define FLAG_ROGUELIKE_META_UNUSED_0x037   0x37 // reserved meta flag
+#define FLAG_ROGUELIKE_META_UNUSED_0x038   0x38 // reserved meta flag
+#define FLAG_ROGUELIKE_META_UNUSED_0x039   0x39 // reserved meta flag
+#define FLAG_ROGUELIKE_META_UNUSED_0x03A   0x3A // reserved meta flag
+#define FLAG_ROGUELIKE_META_UNUSED_0x03B   0x3B // reserved meta flag
+#define FLAG_ROGUELIKE_META_UNUSED_0x03C   0x3C // reserved meta flag
+#define FLAG_ROGUELIKE_META_UNUSED_0x03D   0x3D // reserved meta flag
+#define FLAG_ROGUELIKE_META_UNUSED_0x03E   0x3E // reserved meta flag
+#define FLAG_ROGUELIKE_META_UNUSED_0x03F   0x3F // reserved meta flag
+
+// Range markers for the run reset logic to iterate.
+#define FLAG_ROGUELIKE_RUN_FLAGS_START   FLAG_ROGUELIKE_STARTER_CHOSEN     // 0x20
+#define FLAG_ROGUELIKE_RUN_FLAGS_END     FLAG_ROGUELIKE_RUN_UNUSED_0x02F   // 0x2F
+#define FLAG_ROGUELIKE_META_FLAGS_START  FLAG_ROGUELIKE_UNLOCKED_STARTER_4 // 0x30
+#define FLAG_ROGUELIKE_META_FLAGS_END    FLAG_ROGUELIKE_META_UNUSED_0x03F  // 0x3F
 #define FLAG_UNUSED_0x040    0x40 // Unused Flag
 #define FLAG_UNUSED_0x041    0x41 // Unused Flag
 #define FLAG_UNUSED_0x042    0x42 // Unused Flag
