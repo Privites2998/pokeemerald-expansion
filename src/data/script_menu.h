@@ -1,4 +1,11 @@
 // multichoice lists
+static const struct MenuAction MultichoiceList_RoguelikeStarter[] =
+{
+    {COMPOUND_STRING("TREECKO")},
+    {COMPOUND_STRING("LITTEN")},
+    {COMPOUND_STRING("SQUIRTLE")},
+};
+
 static const struct MenuAction MultichoiceList_BrineyOnDewford[] =
 {
     {COMPOUND_STRING("PETALBURG")},
@@ -1260,6 +1267,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_HOF_VICTORIES_QUIT]                         = MULTICHOICE(sMultichoiceList_HOF_Victories_Quit),
     [MULTI_EGGS_VICTORIES_QUIT]                        = MULTICHOICE(sMultichoiceList_Eggs_Victories_Quit),
     [MULTI_HOF_EGGS_VICTORIES_QUIT]                    = MULTICHOICE(sMultichoiceList_HOF_Eggs_Victories_Quit),
+    [MULTI_ROGUELIKE_STARTER]                          = MULTICHOICE(MultichoiceList_RoguelikeStarter),
 };
 
 const u8 *const gStdStrings[] =
