@@ -1738,3 +1738,4 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 
 	.include "data/scripts/roguelike/roguelike_init.inc"
 	.include "data/maps/RoguelikeHub/scripts.inc"
+	.include "data/maps/RoguelikeRoom1/scripts.inc"

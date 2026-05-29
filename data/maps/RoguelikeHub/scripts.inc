@@ -48,15 +48,8 @@ RoguelikeHub_EventScript_StarterDeclined::
 	release
 	end
 
-@ ===========================================================================
-@ Portal pads (Roadmap T20). Placeholder until run entry is wired (T22).
-@ Both console tiles share this trigger.
-@ ===========================================================================
-RoguelikeHub_EventScript_Portal::
-	lockall
-	msgbox RoguelikeHub_Text_PortalNotYet, MSGBOX_DEFAULT
-	releaseall
-	end
+@ Portal pads are now real warps to RoguelikeRoom1 (Roadmap T22) -- see the
+@ warp_events in map.json. The old "not yet" placeholder script was removed.
 
 RoguelikeHub_Text_StarterIntro:
 	.string "Welcome, challenger.\p"
@@ -76,7 +69,3 @@ RoguelikeHub_Text_StarterAlready:
 RoguelikeHub_Text_StarterDeclined:
 	.string "Take your time. Speak with me when\n"
 	.string "you have decided.$"
-
-RoguelikeHub_Text_PortalNotYet:
-	.string "The portal hums with energy…\p"
-	.string "But the way is not open yet.$"

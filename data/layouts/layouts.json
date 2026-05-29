@@ -9333,6 +9333,16 @@
       "secondary_tileset": "gTileset_BattleFrontier",
       "border_filepath": "data/layouts/RoguelikeHub/border.bin",
       "blockdata_filepath": "data/layouts/RoguelikeHub/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROGUELIKE_ROOM1",
+      "name": "RoguelikeRoom1_Layout",
+      "width": 16,
+      "height": 16,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BattleFrontier",
+      "border_filepath": "data/layouts/RoguelikeRoom1/border.bin",
+      "blockdata_filepath": "data/layouts/RoguelikeRoom1/map.bin"
     }
   ]
 }

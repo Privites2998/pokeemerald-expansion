@@ -81,6 +81,17 @@ Gender: Male
 Music: Male
 Double Battle: No
 
+=== TRAINER_ROGUELIKE_ROOM1 ===
+Name: RILEY
+Class: Youngster
+Pic: Youngster
+Gender: Male
+Double Battle: No
+AI: Basic Trainer
+
+Zigzagoon
+Level: 19
+
 === TRAINER_SAWYER_1 ===
 Name: SAWYER
 Class: Hiker
